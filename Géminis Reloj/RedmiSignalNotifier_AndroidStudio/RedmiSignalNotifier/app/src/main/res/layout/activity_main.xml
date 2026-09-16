@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F7FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monitor Redmi Watch 3"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1A202C"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Envía una alerta al reloj a través de Mi Fitness cuando la señal del Bluetooth empiece a debilitarse."
+            android:textSize="14sp"
+            android:textColor="#718096"
+            android:layout_marginBottom="24dp"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dirección MAC del Reloj"
+                    android:textStyle="bold"
+                    android:textColor="#2D3748"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/etMacAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="Ej: AA:BB:CC:DD:EE:FF"
+                    android:inputType="textCapCharacters"
+                    android:background="@android:drawable/editbox_background"
+                    android:paddingHorizontal="12dp"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Umbral RSSI de Alerta (dBm)"
+                    android:textStyle="bold"
+                    android:textColor="#2D3748"
+                    android:layout_marginBottom="6dp"/>
+
+                <EditText
+                    android:id="@+id/etRssiThreshold"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="-85 (Valores entre -75 y -95)"
+                    android:text="-85"
+                    android:inputType="numberSigned"
+                    android:background="@android:drawable/editbox_background"
+                    android:paddingHorizontal="12dp"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:id="@+id/btnStartService"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="Iniciar Monitoreo BLE"
+            android:textStyle="bold"
+            android:backgroundTint="#2B6CB0"
+            android:layout_marginBottom="12dp"/>
+
+        <Button
+            android:id="@+id/btnStopService"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="Detener Monitoreo"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textColor="#E53E3E"/>
+
+    </LinearLayout>
+</ScrollView>
